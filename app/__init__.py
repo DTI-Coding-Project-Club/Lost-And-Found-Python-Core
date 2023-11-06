@@ -13,6 +13,11 @@ def create_app(config_class=Config):
 
     @app.route('/')
     def root_endpoint():
-        return 'Flask Application Named: \"' + os.environ['FLASK_APP'] + '\" Running!!'
+        return 'Lost and Found Service Running!!'
     
+    @app.route('/images/<imageID>')
+    def images(imageID):
+        return f'Image: {imageID}'
+
+
     return app
